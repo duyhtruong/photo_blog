@@ -8,7 +8,7 @@ const contentful = require('contentful');
 class Home extends React.Component {
 
 	state = {
-		all: []
+		allPosts: []
 	}
 
 	componentDidMount(){
@@ -17,12 +17,12 @@ class Home extends React.Component {
 			accessToken: '27b3f174ea7cf664c2b4a3872bb829bc3413d56eaf7b45ea048eb8ac3db347d0'
 		}) 
 
-		client.getEntry('GxUAppsHhEjz3NrqqmNld')
-			.then((entry) => {
-				console.log(entry.fields)
-				
+		client.getEntries({
+			order: 'sys.createdAt'
+		})
+			.then((response) => {
 				this.setState({
-					all: entry.fields
+					allPosts: response.items
 				})
 			})
 	}
@@ -30,9 +30,16 @@ class Home extends React.Component {
 	renderPosts = () => {
 		return (
 			<div>
-			<h1>{this.state.all.title}</h1>
-			<p>{this.state.all.bodyTest}</p>
-			{documentToReactComponents(this.state.all.body)}
+			{
+				this.state.allPosts.map((item)=>
+					<div key={item.fields.title}>
+					<h1>{item.fields.title}</h1>
+					{documentToReactComponents(item.fields.body)}
+					<p>Tags: {item.fields.tags}</p>
+					</div>
+
+				)
+			}
 			</div>
 		)
 	}	
