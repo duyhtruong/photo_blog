@@ -2,6 +2,8 @@ import React from 'react';
 import Header from './Header';
 import '../index.css';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { connect } from 'react-redux';
+import { getAllPosts } from '../actions';
 
 const contentful = require('contentful');
 
@@ -12,6 +14,8 @@ class Home extends React.Component {
 	}
 
 	componentDidMount(){
+		this.props.getAllPosts();
+
 		const client = contentful.createClient({
 			space: '0pptu4cqqfwc',
 			accessToken: '27b3f174ea7cf664c2b4a3872bb829bc3413d56eaf7b45ea048eb8ac3db347d0'
@@ -59,4 +63,13 @@ class Home extends React.Component {
 	}
 }
 
-export default Home;
+const mapStateToProps = (state) => {
+	return {
+		allPosts: state.allPosts
+	}
+}
+
+
+
+
+export default connect(mapStateToProps, { getAllPosts })(Home);
