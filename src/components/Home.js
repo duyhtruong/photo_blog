@@ -9,44 +9,32 @@ const contentful = require('contentful');
 
 class Home extends React.Component {
 
-	state = {
-		allPosts: []
-	}
 
 	componentDidMount(){
 		this.props.getAllPosts();
-
-		const client = contentful.createClient({
-			space: '0pptu4cqqfwc',
-			accessToken: '27b3f174ea7cf664c2b4a3872bb829bc3413d56eaf7b45ea048eb8ac3db347d0'
-		}) 
-
-		client.getEntries({
-			order: 'sys.createdAt'
-		})
-			.then((response) => {
-				this.setState({
-					allPosts: response.items
-				})
-			})
 	}
+	
 
-	renderPosts = () => {
-		return (
-			<div>
-			{
-				this.state.allPosts.map((item)=>
-					<div key={item.fields.title}>
-					<h1>{item.fields.title}</h1>
-					{documentToReactComponents(item.fields.body)}
-					<p>Tags: {item.fields.tags}</p>
-					</div>
-
+	renderLatestPost = () => {
+		if(!this.props.allPosts[0]){
+			return (
+				<div>
+					{console.log('Loading')}
+				</div>
 				)
-			}
-			</div>
-		)
+			}else{
+
+			return (
+				<div>
+					<h1>{this.props.allPosts[0][0]['fields']['title']}</h1>
+					{documentToReactComponents(this.props.allPosts[0][0]['fields']['body'])}
+				</div>
+
+
+			)
+		}
 	}	
+
 
 	render(){
 
@@ -55,8 +43,8 @@ class Home extends React.Component {
 				<Header />
 				<div className='homeBody'>
 					<p>Home</p>
-					<p>This is where the blog posts will show up</p>
-					{this.renderPosts()}
+					<p>This is where the latest blog posts will show up</p>
+					{this.renderLatestPost()}
 				</div>
 			</div>
 			);
