@@ -6,7 +6,7 @@
 
 }
 
-.homeBody{
+.Body{
 	margin-left: 3em;
 	margin-right: 3em;
 	font-size: 1.5em;
@@ -22,4 +22,9 @@
 .navBar li {
 	display: inline-block;
 	padding-right: 2em;
+}
+
+.archiveCategories{
+	display: flex;
+	justify-content: space-between;
 }
