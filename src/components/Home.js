@@ -5,13 +5,16 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { connect } from 'react-redux';
 import { getAllPosts } from '../actions';
 
+
 const contentful = require('contentful');
 
 class Home extends React.Component {
 
 
 	componentDidMount(){
+		if(!this.props.allPosts[0]){
 		this.props.getAllPosts();
+		}
 	}
 	
 

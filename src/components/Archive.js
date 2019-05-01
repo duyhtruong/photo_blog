@@ -1,5 +1,8 @@
 import React from 'react';
 import Header from './Header';
+import { connect } from 'react-redux';
+import { getAllPosts } from '../actions';
+
 
 class Archive extends React.Component{
 	
@@ -24,6 +27,19 @@ class Archive extends React.Component{
 		)
 	}
 
+	
+
+	renderFoods = () => {
+		if(this.props.allPosts[0]){
+			this.props.allPosts[0].filter(item => item['fields']['tags'] == 'food').map(item => {
+				return (
+					console.log(item['fields']['title'])
+				)
+			}
+				)
+		}
+		
+	}
 
 	render(){
 		return(
@@ -32,6 +48,7 @@ class Archive extends React.Component{
 				<div className='Body'>
 					Archive
 					{this.renderCategories()}
+					{this.renderFoods()}
 				</div>
 				
 			</div>
@@ -39,4 +56,10 @@ class Archive extends React.Component{
 	}
 }
 
-export default Archive;
+const mapStateToProps = (state) => {
+	return {
+		allPosts: state.allPosts
+	}
+}
+
+export default connect(mapStateToProps, { getAllPosts})(Archive);
