@@ -11,25 +11,43 @@ class Archive extends React.Component{
 			<div className='archiveCategories'>
 					<div>
 						<h2>Places</h2>
-						<li>dummy1</li>
-						<li>dummy2</li>
+						{this.renderTags('places')}
 					</div>
 					<div>
 						<h2>Things</h2>
-						<li>blah</li>
-						<li>blah</li>
+						{this.renderTags('things')}
 					</div>
 					<div>
 						<h2>Food</h2>
-						<li>blah</li>
+						{this.renderTags('food')}
 					</div>
 			</div>
 		)
 	}
 
-	
 
-	renderFoods = () => {
+	renderTags = (tag) => {
+		if(this.props.allPosts[0]){
+
+			return (
+			this.props.allPosts[0].filter(item => item['fields']['tags'] == tag).map(item => 
+				
+					<div key={item['fields']['title']}>
+							<li>
+							{item['fields']['title']}
+							</li>
+					</div>
+				
+			)
+
+			)
+		}
+
+
+	}
+
+
+/*	renderFoods = () => {
 		if(this.props.allPosts[0]){
 			this.props.allPosts[0].filter(item => item['fields']['tags'] == 'food').map(item => {
 				return (
@@ -40,6 +58,9 @@ class Archive extends React.Component{
 		}
 		
 	}
+*/
+
+
 
 	render(){
 		return(
@@ -47,8 +68,9 @@ class Archive extends React.Component{
 				<Header/>
 				<div className='Body'>
 					Archive
-					{this.renderCategories()}
-					{this.renderFoods()}
+						{this.renderCategories()}
+						
+					
 				</div>
 				
 			</div>
