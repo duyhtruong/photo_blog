@@ -2,9 +2,15 @@ import React from 'react';
 import Header from './Header';
 import { connect } from 'react-redux';
 import { getAllPosts } from '../actions';
-
+import { Link } from 'react-router-dom';
 
 class Archive extends React.Component{
+
+	componentDidMount(){
+		if(!this.props.allPosts){
+		this.props.getAllPosts();
+		}
+	}
 	
 	renderCategories(){
 		return (
@@ -34,7 +40,7 @@ class Archive extends React.Component{
 				
 					<div key={item['fields']['title']}>
 							<li>
-							{item['fields']['title']}
+							<Link to={`/post/${item['sys']['id']}`}>{item['sys']['id']}</Link>
 							</li>
 					</div>
 				
@@ -45,21 +51,6 @@ class Archive extends React.Component{
 
 
 	}
-
-
-/*	renderFoods = () => {
-		if(this.props.allPosts[0]){
-			this.props.allPosts[0].filter(item => item['fields']['tags'] == 'food').map(item => {
-				return (
-					console.log(item['fields']['title'])
-				)
-			}
-				)
-		}
-		
-	}
-*/
-
 
 
 	render(){
