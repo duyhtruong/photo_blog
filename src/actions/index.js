@@ -14,14 +14,3 @@ export const getAllPosts = () => {
 	});
 	}
 }
-
-export const getSinglePost = (id) => {
-	return async (dispatch, getState) => {
-		const response = await axios.get(`${BASE_URL}/spaces/${SPACE_ID}/entries/${id}?access_token=${TOKEN}`);
-
-		dispatch({
-			type: 'GET_SINGLE_POST',
-			payload: 'test'
-		});
-	}
-}

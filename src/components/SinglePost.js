@@ -16,19 +16,19 @@ class SinglePost extends React.Component{
 
 	}
 
-	renderPost = (id) => {
+	renderPost = (path) => {
 		if(this.props.allPosts[0]){
 
 			return (
-			this.props.allPosts[0].filter(item => item['sys']['id'] == id).map(item => 
+			this.props.allPosts[0].filter(item => item['fields']['path'] === path).map(item => 
 				
 					<div key={item['fields']['title']}>
 							<h1>
 							{item['fields']['title']}
 							</h1>
-							<p>
+						
 							{documentToReactComponents(item['fields']['body'])}
-							</p>
+						
 					</div>
 				
 			)

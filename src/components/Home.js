@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { getAllPosts } from '../actions';
 
 
-const contentful = require('contentful');
+
 
 class Home extends React.Component {
 
@@ -21,9 +21,7 @@ class Home extends React.Component {
 	renderLatestPost = () => {
 		if(!this.props.allPosts[0]){
 			return (
-				<div>
-					{console.log('Loading')}
-				</div>
+				null
 				)
 			}else{
 

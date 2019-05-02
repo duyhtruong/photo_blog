@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 class Archive extends React.Component{
 
 	componentDidMount(){
-		if(!this.props.allPosts){
+		if(!this.props.allPosts[0]){
 		this.props.getAllPosts();
 		}
 	}
@@ -36,11 +36,11 @@ class Archive extends React.Component{
 		if(this.props.allPosts[0]){
 
 			return (
-			this.props.allPosts[0].filter(item => item['fields']['tags'] == tag).map(item => 
+			this.props.allPosts[0].filter(item => item['fields']['tags'] === tag).map(item => 
 				
 					<div key={item['fields']['title']}>
 							<li>
-							<Link to={`/post/${item['sys']['id']}`}>{item['sys']['id']}</Link>
+							<Link to={`/post/${item['fields']['path']}`}>{item['fields']['title']}</Link>
 							</li>
 					</div>
 				
@@ -59,6 +59,7 @@ class Archive extends React.Component{
 				<Header/>
 				<div className='Body'>
 					Archive
+					<img src='https://bit.ly/2VG9R2U'/>
 						{this.renderCategories()}
 						
 					
