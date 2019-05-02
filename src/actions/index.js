@@ -21,7 +21,7 @@ export const getSinglePost = (id) => {
 
 		dispatch({
 			type: 'GET_SINGLE_POST',
-			payload: response.data
-		})
+			payload: 'test'
+		});
 	}
 }

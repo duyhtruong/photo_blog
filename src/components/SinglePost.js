@@ -1,34 +1,55 @@
 import React from 'react';
 import Header from './Header';
-import { getSinglePost } from '../actions';
+
 import { connect } from 'react-redux';
+import { getAllPosts } from '../actions';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+
 
 class SinglePost extends React.Component{
 	
 	componentDidMount(){
-		this.props.getSinglePost(this.props.match.params.id)
-		console.log(this.props.match.params.id)
-	}
-
-
-	renderPost(){
-		if(this.props.singlePost){
-			return(
-				<div>
-					{console.log(this.props.singlePost)}
-				</div>
-			)
+		if(!this.props.allPosts[0]){
+		
+		this.props.getAllPosts();
 		}
 
 	}
+
+	renderPost = (id) => {
+		if(this.props.allPosts[0]){
+
+			return (
+			this.props.allPosts[0].filter(item => item['sys']['id'] == id).map(item => 
+				
+					<div key={item['fields']['title']}>
+							<h1>
+							{item['fields']['title']}
+							</h1>
+							<p>
+							{documentToReactComponents(item['fields']['body'])}
+							</p>
+					</div>
+				
+			)
+
+			)
+		}
+
+
+	}
+
 
 	render(){
 		return (
 			
 			<div> 
 				<Header/>
-				SinglePost 
-				{this.renderPost()}
+				SinglePost
+			<div className='Body'>
+				{this.renderPost(this.props.match.params.id)}
+			</div>
+
 			</div>
 		)
 	}
@@ -36,8 +57,9 @@ class SinglePost extends React.Component{
 
 const mapStateToProps = (state) => {
 	return{
-		singlePost: state.singlePostReducer
+
+		allPosts: state.allPosts 
 	}
 }
 
-export default connect(mapStateToProps, { getSinglePost })(SinglePost);
+export default connect(mapStateToProps, {  getAllPosts })(SinglePost);
