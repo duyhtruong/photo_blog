@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getAllPosts } from '../actions';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
+import { compiler } from 'markdown-to-jsx';
 
 class SinglePost extends React.Component{
 	
@@ -16,7 +17,12 @@ class SinglePost extends React.Component{
 
 	}
 
+
+
+
 	renderPost = (path) => {
+
+
 		if(this.props.allPosts[0]){
 
 			return (
@@ -28,7 +34,7 @@ class SinglePost extends React.Component{
 							</h1>
 						
 							{documentToReactComponents(item['fields']['body'])}
-						
+							{compiler(item['fields']['bodyTest'])}
 					</div>
 				
 			)
