@@ -3,7 +3,7 @@ import Header from './Header';
 
 import { connect } from 'react-redux';
 import { getAllPosts } from '../actions';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+
 
 import { compiler } from 'markdown-to-jsx';
 
@@ -32,9 +32,9 @@ class SinglePost extends React.Component{
 							<h1>
 							{item['fields']['title']}
 							</h1>
-						
-							{documentToReactComponents(item['fields']['body'])}
+							<div className='innerBody'>
 							{compiler(item['fields']['bodyTest'])}
+							</div>
 					</div>
 				
 			)
@@ -49,9 +49,9 @@ class SinglePost extends React.Component{
 	render(){
 		return (
 			
-			<div> 
+			<div > 
 				<Header/>
-				SinglePost
+				
 			<div className='Body'>
 				{this.renderPost(this.props.match.params.id)}
 			</div>

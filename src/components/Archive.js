@@ -15,17 +15,24 @@ class Archive extends React.Component{
 	renderCategories(){
 		return (
 			<div className='archiveCategories'>
-					<div>
-						<h2>Places</h2>
+					<div className='archiveItem'>
+						<h1 className='headerFont'>Places</h1>
+						<div className='bodyFont'>
 						{this.renderTags('places')}
+						</div>
 					</div>
-					<div>
-						<h2>Things</h2>
+					<div className='archiveItem'>
+						<h1 className='headerFont'>Things</h1>
+						<div className='bodyFont'>
 						{this.renderTags('things')}
+						</div>
 					</div>
-					<div>
-						<h2>Food</h2>
+					<div className='archiveItem'>
+
+						<h1 className='headerFont'>Food</h1>
+						<div className='bodyFont' >
 						{this.renderTags('food')}
+						</div>
 					</div>
 			</div>
 		)
@@ -58,10 +65,10 @@ class Archive extends React.Component{
 			<div>
 				<Header/>
 				<div className='Body'>
-					Archive
-					<img src='https://bit.ly/2VG9R2U'/>
+				
+					<div>
 						{this.renderCategories()}
-						
+					</div>
 					
 				</div>
 				

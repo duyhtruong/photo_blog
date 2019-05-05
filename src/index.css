@@ -1,22 +1,67 @@
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+
 .headerText{
 	display: flex;
 	font-size: 4em;
 	justify-content: center;
 	margin-top: 2em;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
 
 }
 
-.Body{
-	margin-left: 3em;
-	margin-right: 3em;
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	color: black;
+}
+
+a:hovor {
+	color: yellow;
+}
+
+
+.headerFont {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
 	font-size: 1.5em;
-	width: 800px;
-	background-color: green;
+}
+
+
+.Body{
+	margin: auto;
+	padding: 2vh 2vw 2vh 2vw;
+	font-size: 1.5em;
+	max-width: 100vw;
+
 	overflow-wrap: break-word;
 }
 
 .Body img{
-	width: 250px;
+	width: 90vw;
+}
+
+.Body h1{
+	font-family: 'Open Sans', san-serif;
+	font-weight: 600;
+}
+
+.Body h2 {
+	font-family: 'Open Sans', san-serif;
+	font-weight: 400;
+}
+
+.innerBody {
+	padding-left: 2vw;
+	padding-right: 2vw;
+}
+
+.bodyFont {
+	font-family: 'Open Sans', san-serif;
+	font-weight: 300;
 }
 
 .navBar{
@@ -24,6 +69,7 @@
 	justify-content: flex-end;
 	margin-right: 2.5em;
 	font-size: 1.5em;
+	font-family: 'Open Sans', san-serif;
 }
 
 .navBar li {
@@ -33,5 +79,25 @@
 
 .archiveCategories{
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
+	align-content: center;
+	flex-wrap: wrap;
+	text-align:center;
+
 }
+
+.archiveItem{
+	width: 100%;
+}
+
+
+
+
+
+li {
+	list-style: none;
+
+}
+
+
+

@@ -1,10 +1,10 @@
 import React from 'react';
 import Header from './Header';
 import '../index.css';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+
 import { connect } from 'react-redux';
 import { getAllPosts } from '../actions';
-
+import { compiler } from 'markdown-to-jsx';
 
 
 
@@ -28,7 +28,10 @@ class Home extends React.Component {
 			return (
 				<div>
 					<h1>{this.props.allPosts[0][0]['fields']['title']}</h1>
-					{documentToReactComponents(this.props.allPosts[0][0]['fields']['body'])}
+							<div className='innerBody'>
+							{compiler(this.props.allPosts[0][0]['fields']['bodyTest'])}
+							</div>
+
 				</div>
 
 
