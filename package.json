@@ -2,7 +2,7 @@
   "name": "photo_blog",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://duyhtruong.github.io/photo_blog",
+  "homepage": "https://duyhtruong.github.io/photo_blog/",
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.2.0",
     "axios": "^0.18.0",
