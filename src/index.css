@@ -59,6 +59,12 @@ a:hovor {
 	padding-right: 2vw;
 }
 
+.innerBody p {
+	font-family: 'Open Sans', san-serif;
+	font-weight: 300;	
+
+}
+
 .bodyFont {
 	font-family: 'Open Sans', san-serif;
 	font-weight: 300;
