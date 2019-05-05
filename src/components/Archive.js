@@ -17,21 +17,21 @@ class Archive extends React.Component{
 			<div className='archiveCategories'>
 					<div className='archiveItem'>
 						<h1 className='headerFont'>Places</h1>
-						<div className='bodyFont'>
-						{this.renderTags('places')}
+						<div className='innerBody'>
+							{this.renderTags('places')}
 						</div>
 					</div>
 					<div className='archiveItem'>
 						<h1 className='headerFont'>Things</h1>
-						<div className='bodyFont'>
-						{this.renderTags('things')}
+						<div className='innerBody'>
+							{this.renderTags('things')}
 						</div>
 					</div>
 					<div className='archiveItem'>
 
 						<h1 className='headerFont'>Food</h1>
-						<div className='bodyFont' >
-						{this.renderTags('food')}
+						<div className='innerBody' >
+							{this.renderTags('food')}
 						</div>
 					</div>
 			</div>

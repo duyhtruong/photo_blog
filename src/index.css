@@ -1,5 +1,7 @@
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Roboto:100,300,400,500,700,900');
+
 
 .headerText{
 	display: flex;
@@ -32,16 +34,19 @@ a:hovor {
 
 
 .Body{
-	margin: auto;
-	padding: 2vh 2vw 2vh 2vw;
+
+	padding: 2vh 2vw 75vh 2vw;
 	font-size: 1.5em;
 	max-width: 100vw;
-
 	overflow-wrap: break-word;
 }
 
 .Body img{
+
 	width: 90vw;
+	padding-top: 3vh;
+	padding-bottom: 3vh;
+
 }
 
 .Body h1{
@@ -54,27 +59,37 @@ a:hovor {
 	font-weight: 400;
 }
 
+
+
+
 .innerBody {
 	padding-left: 2vw;
 	padding-right: 2vw;
 }
 
 .innerBody p {
-	font-family: 'Open Sans', san-serif;
-	font-weight: 300;	
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 0.75em;
+	max-width: 800px;
+	margin: auto;
 
 }
 
-.bodyFont {
-	font-family: 'Open Sans', san-serif;
-	font-weight: 300;
+.innerBody li {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 100;
+	font-size: 0.75em;	
+	margin: auto;	
 }
+
 
 .navBar{
 	display: flex;
 	justify-content: flex-end;
 	margin-right: 2.5em;
 	font-size: 1.5em;
+	font-weight: 700;
 	font-family: 'Open Sans', san-serif;
 }
 
@@ -95,9 +110,6 @@ a:hovor {
 .archiveItem{
 	width: 100%;
 }
-
-
-
 
 
 li {

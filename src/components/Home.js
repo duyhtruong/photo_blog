@@ -46,8 +46,7 @@ class Home extends React.Component {
 			<div>
 				<Header />
 				<div className='Body'>
-					<p>Home</p>
-					<p>This is where the latest blog posts will show up</p>
+
 					{this.renderLatestPost()}
 				</div>
 			</div>

@@ -30,10 +30,10 @@ class SinglePost extends React.Component{
 				
 					<div key={item['fields']['title']}>
 							<h1>
-							{item['fields']['title']}
+								{item['fields']['title']}
 							</h1>
 							<div className='innerBody'>
-							{compiler(item['fields']['bodyTest'])}
+								{compiler(item['fields']['bodyTest']) }
 							</div>
 					</div>
 				
@@ -52,9 +52,9 @@ class SinglePost extends React.Component{
 			<div > 
 				<Header/>
 				
-			<div className='Body'>
-				{this.renderPost(this.props.match.params.id)}
-			</div>
+				<div className='Body'>
+					{this.renderPost(this.props.match.params.id)}
+				</div>
 
 			</div>
 		)
