@@ -12,7 +12,7 @@ class App extends React.Component{
 			<BrowserRouter>
 				<div>
 	
-					<Route exact path ='/' component={Home} />
+					<Route exact path ='/photo_blog/' component={Home} />
 					<Route exact path ='/archive' component={Archive} />
 					<Route exact path ='/about' component={About} />
 					<Route exact path ='/post/:id' component={SinglePost} />
