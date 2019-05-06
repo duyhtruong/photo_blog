@@ -11,6 +11,7 @@ class Header extends React.Component{
 					<Link to='/photo_blog/'>dhtruong</Link>
 				</div>
 				<NavBar />
+				<hr />
 			</div>
 		);
 	}

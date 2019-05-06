@@ -3,6 +3,7 @@ import Header from './Header';
 import { connect } from 'react-redux';
 import { getAllPosts } from '../actions';
 import { Link } from 'react-router-dom';
+import Footer from './Footer';
 
 class Archive extends React.Component{
 
@@ -71,6 +72,7 @@ class Archive extends React.Component{
 					</div>
 					
 				</div>
+				<Footer />
 				
 			</div>
 		);

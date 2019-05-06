@@ -32,6 +32,7 @@ class SinglePost extends React.Component{
 							<h1>
 								{item['fields']['title']}
 							</h1>
+							<p className='postDate'>{item['fields']['date']}</p>
 							<div className='innerBody'>
 								{compiler(item['fields']['bodyTest']) }
 							</div>

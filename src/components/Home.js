@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './Header';
+import Footer from './Footer';
 import '../index.css';
 
 import { connect } from 'react-redux';
@@ -28,6 +29,7 @@ class Home extends React.Component {
 			return (
 				<div>
 					<h1>{this.props.allPosts[0][0]['fields']['title']}</h1>
+						<p className='postDate'>{this.props.allPosts[0][0]['fields']['date']}</p>
 							<div className='innerBody'>
 							{compiler(this.props.allPosts[0][0]['fields']['bodyTest'])}
 							</div>
@@ -49,6 +51,7 @@ class Home extends React.Component {
 
 					{this.renderLatestPost()}
 				</div>
+				<Footer />
 			</div>
 			);
 	}
