@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header';
-
+import Footer from './Footer';
 import { connect } from 'react-redux';
 import { getAllPosts } from '../actions';
 
@@ -56,7 +56,7 @@ class SinglePost extends React.Component{
 				<div className='Body'>
 					{this.renderPost(this.props.match.params.id)}
 				</div>
-
+				<Footer />
 			</div>
 		)
 	}

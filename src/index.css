@@ -171,5 +171,28 @@ li {
 }
 
 
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 812px) 
+and (-webkit-device-pixel-ratio : 3)
+and (orientation : portrait) { 
+
+.navBar{
+	justify-content: center;
+	margin-right: 0;
+}
+
+.innerBody{
+	padding: 0;
+}
+
+.Body img {
+
+	padding-top: 1vh;
+	padding-bottom: 1vh;
+}
+
+ }
+
 
 
