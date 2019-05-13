@@ -2,8 +2,9 @@
  
  <p align='center'><img src='./assets/mockup_blog.png' width='500'></p>
  <h1 align='center'>The Blog</h1> 
-  
-  
+<p align='center'>Live Demo: https://duyhtruong.github.io/photo_blog</p>  
+  </br>
+  </br>
 <p align='center'><img src='./assets/post2_blog.png' width='500'></p>
 
   The Blog was created with the purpose of being a personal space where I can
